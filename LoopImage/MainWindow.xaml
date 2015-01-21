@@ -1,0 +1,26 @@
+﻿<Window x:Class="LoopImage.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="350" Width="525" KeyDown="Window_KeyDown" MouseDown="Window_MouseDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <DockPanel Name="TopPanel" Grid.Row="0">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="DevPlugin">
+                    <MenuItem Name="Clear" Header="Clear" Click="Clear_Click"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <Label Name="DevTip" Content="{Binding DevHelper}" Target="{Binding Source=DevHelper}" Grid.Row="1"></Label>
+        <Image x:Name="Image" Source="{Binding MainImageSource}" Grid.Row="2" Grid.Column="0"></Image>
+        <Frame NavigationUIVisibility="Hidden" Name="PageFrame" Grid.Row="2" Grid.Column="0"></Frame>
+        <MediaElement MediaEnded="MusicPlayer_MediaEnded" Name="MusicPlayer"></MediaElement>
+    </Grid>
+</Window>
