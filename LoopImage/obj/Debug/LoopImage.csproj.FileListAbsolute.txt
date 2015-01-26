@@ -27,3 +27,6 @@ C:\Windows.old\Users\JayGu\Documents\Visual Studio 2013\Projects\LoopImage\LoopI
 C:\Windows.old\Users\JayGu\Documents\Visual Studio 2013\Projects\LoopImage\LoopImage\obj\Debug\LoopImage.Properties.Resources.resources
 C:\Windows.old\Users\JayGu\Documents\Visual Studio 2013\Projects\LoopImage\LoopImage\obj\Debug\LoopImage.csproj.GenerateResource.Cache
 C:\Windows.old\Users\JayGu\Documents\Visual Studio 2013\Projects\LoopImage\LoopImage\obj\Debug\LoopImage.csprojResolveAssemblyReference.cache
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\bin\Debug\LoopImage.exe.config
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.exe
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.pdb
