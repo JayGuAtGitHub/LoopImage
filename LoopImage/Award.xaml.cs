@@ -78,6 +78,11 @@ namespace LoopImage
                 h = _h / 2;
                 w = _w / 3;
             }
+            else if (LVDatas.Count == 6)
+            {
+                h = _h / 2;
+                w = _w / 3;
+            }
             foreach (var i in LVDatas)
             {
                 i.imageHeight = h;

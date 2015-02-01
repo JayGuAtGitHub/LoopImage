@@ -33,6 +33,8 @@ namespace LoopImage
     {
         public delegate void AsyncMethodCaller();
 
+        private static NamedPipeServerStream stream;
+
         private Thread thread;
         int currentAward = 10;
         bool isRanding;
@@ -105,8 +107,16 @@ namespace LoopImage
 
         }
 
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            thread.Abort();
+
+            base.OnClosing(e);
+        }
+
         void CurrentDomain_ProcessExit(object sender, EventArgs e)
         {
+            stream.Close();
             thread.Abort();
         }
 
@@ -118,7 +128,7 @@ namespace LoopImage
             
             ps.AddAccessRule(psRule);
 
-            NamedPipeServerStream stream = null;
+            stream = null;
 
             stream = new NamedPipeServerStream("testpipe",
                  PipeDirection.InOut,
@@ -128,13 +138,17 @@ namespace LoopImage
 
             while (true)
             {
-                stream.WaitForConnection();
+                if (stream != null)
+                {
+                    stream.WaitForConnection();
 
-                func();
+                    func();
 
-                
 
-                stream.Disconnect();
+
+                    stream.Disconnect();
+                }
+
             }
         }
 
@@ -192,6 +206,7 @@ namespace LoopImage
             Dispatcher.Invoke(new Action(() =>  // Call a special portion of your code from the WPF thread (called dispatcher)
             {
                 // Now that I have changed the type of MainImageSource, we have to load the bitmap ourselves.
+                //Thread.Sleep(1000);
                 BitmapImage bitmapImage = new BitmapImage();
                 bitmapImage.BeginInit();
                 bitmapImage.UriSource = new Uri(files[counter], UriKind.Relative);
@@ -203,6 +218,10 @@ namespace LoopImage
             {
                 shuffleList(files);
                 counter = 0;
+            }
+            if (!this.isRanding)
+            {
+                this.MainImageSource = null;
             }
         }
 
@@ -317,6 +336,7 @@ namespace LoopImage
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
+                l.Add(GetAwardAndGoNext(counter));
             }
             if (currentAward == 9)//5等奖
             {
@@ -326,10 +346,12 @@ namespace LoopImage
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
+                l.Add(GetAwardAndGoNext(counter));
             }
             if (currentAward == 8)//4等奖
             {
                 DevHelper = "当前4等奖1次";
+                l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
@@ -349,6 +371,7 @@ namespace LoopImage
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
+                l.Add(GetAwardAndGoNext(counter));
             }
             if (currentAward == 5)//3等奖
             {
@@ -360,6 +383,7 @@ namespace LoopImage
             if (currentAward == 4)//2等奖
             {
                 DevHelper = "当前2等奖1次";
+                l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
             }
@@ -387,6 +411,7 @@ namespace LoopImage
             if(currentAward == -1)
             {
                 DevHelper = "当前sepcial等奖1次";
+                l.Add(GetAwardAndGoNext(counter));
                 l.Add(GetAwardAndGoNext(counter));
             }
             PageFrame.Content = new Award(l) {  ShowsNavigationUI=false};

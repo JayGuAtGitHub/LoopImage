@@ -30,3 +30,14 @@ C:\Windows.old\Users\JayGu\Documents\Visual Studio 2013\Projects\LoopImage\LoopI
 C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\bin\Debug\LoopImage.exe.config
 C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.exe
 C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.pdb
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\bin\Debug\LoopImage.exe
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\bin\Debug\LoopImage.pdb
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\Award.baml
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\MainWindow.baml
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\Award.g.cs
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\MainWindow.g.cs
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\App.g.cs
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage_MarkupCompile.cache
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.g.resources
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.Properties.Resources.resources
+C:\Users\Gu\Documents\GitHub\LoopImage\LoopImage\obj\Debug\LoopImage.csproj.GenerateResource.Cache
